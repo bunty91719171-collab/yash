@@ -1,0 +1,37 @@
+# Core framework
+Django>=5.0,<5.2
+djangorestframework>=3.15,<3.16
+
+# Environment configuration
+python-dotenv>=1.0,<2.0
+
+# Database driver (only needed if DB_ENGINE=mysql in .env)
+mysqlclient>=2.2,<3.0
+# If mysqlclient fails to build on your system, use PyMySQL instead and add
+# these two lines to privacy_ai_project/__init__.py:
+#   import pymysql
+#   pymysql.install_as_MySQLdb()
+# PyMySQL>=1.1,<2.0
+
+# File uploads (ImageField support etc.)
+Pillow>=10.0,<11.0
+
+# Local model training (Section 13) and FedAvg aggregation (Section 15)
+numpy>=1.26,<3.0
+pandas>=2.2,<3.1
+scikit-learn>=1.4,<1.9
+
+# Optional: PDF text extraction (Section 12). The app degrades gracefully
+# and flags documents for manual/OCR review if this is not installed.
+pypdf>=4.0,<6.0
+
+# PDF generation for the "Final Sector Report" feature (reports app) —
+# builds a per-sector advantages/disadvantages/implementation-guide PDF
+# with an embedded Federated Learning workflow diagram.
+reportlab>=4.0,<5.0
+
+# Optional, for future real-time chat upgrade (Section 20) — not required
+# for the polling-based chat that ships by default.
+# channels>=4.0,<5.0
+# channels-redis>=4.2,<5.0
+# daphne>=4.1,<5.0
